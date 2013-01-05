@@ -1,40 +1,11 @@
-/**
- * community
- * Default app for nodester
- * @license MIT
-*/
+var express = require('express');
 
-/*jshint node:true, noempty:true, laxcomma:true, laxbreak:false */
+app = express();
 
-
-"use strict";
-
-var fs = require('fs')
-  , express = require('express')
-  , app = express.createServer()
-  ;
-
-app.configure(function(){
-	app.use(express.static(__dirname+'/public'));	
-})
-
-
-app.get('/', function(req,res){
-	fs.createReadStream(__dirname + '/index.html').pipe(res);
+app.get('/', function(req, res) {
+    res.send({running:true});
 });
 
-app.get('/version', function(req,res){
-	res.writeHeader(200, {'Content-type':'application/json'});
-	res.end('{"version":"'+ process.version +'"}');
-})
-
-app.get('*', function(req,res){
-	res.statusCode = 404;
-	res.end(':: not found ::');
-});
-
-var PORT = process.env['app_port'] || 21022;
-
-app.listen( PORT , function(){
-	console.log(':: nodester :: \n\nApp listening on port %s', this.address().port)
+var server = app.listen(process.env.app_port || 8080, function() {
+    console.log("Server running on " + server.address().port + " in " + app.settings.env + " mode.");
 });

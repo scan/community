@@ -1,24 +1,36 @@
 {
-  "author": "scan",
-  "name": "community",
-  "description": "Default app for nodester",
-  "version": "0.0.0",
-  "private": true,
-  "homepage": "http://community.nodester.com",
-  "node": "0.8.1",
-  "repository": {
-    "url": "defaultapp"
-  },
-  "main": "server.js",
-  "dependencies": {
-    "express": "~2.5.9"
-  },
-  "devDependencies": {},
-  "optionalDependencies": {},
-  "engines": {
-    "node": "*"
-  },
-  "scripts": {
-    "start": "node server"
-  }
+    "author": "scan",
+    "name": "community",
+    "description": "Tutorial app",
+    "version": "0.0.0",
+    "private": true,
+    "homepage": "http://community.nodester.com",
+    "node": "0.8.1",
+    "repository": {
+        "url": "defaultapp"
+    },
+    "bugs": {
+        "url" : "http://github.com/scan/community/issues"
+    },
+    "main": "server.js",
+    "dependencies": {
+        "express": "3.x",
+        "connect-mongodb": "",
+        "connect-assets": "",
+        "mongoose": "3.x",
+        "passport": "",
+        "passport-browserid": "",
+        "moment": "",
+        "underscore.string": "",
+        "socket.io": "",
+        "socket.io-mongo": ""
+    },
+    "devDependencies": {},
+    "optionalDependencies": {},
+    "engines": {
+        "node": "0.8.x"
+    },
+    "scripts": {
+        "start": "node server"
+    }
 }
